@@ -1,0 +1,8 @@
+# Default ignored files
+/.idea/workspace.xml
+
+# idea folder
+.idea/
+
+# Don't need JAR only source
+target/
