@@ -20,6 +20,7 @@ public class simpleCannon {
         double time = 0;
         double maxY = 0;
 
+        // Simulation
         while(cannonBall.getYPosition() >= 0) {
             cannonBall.updatePosition(timestep);
             cannonBall.updateVelocity(force, timestep);
