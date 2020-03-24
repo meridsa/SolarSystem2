@@ -76,9 +76,6 @@ class PhysicsVectorTest {
         assertEquals(2.0, pv.getY());
         assertEquals(3.0, pv.getZ());
     }
-}
-
-class PhysicsVectorAddTest {
 
     @Test
     public void AddEmptyVecs_AllZero() {
@@ -110,5 +107,32 @@ class PhysicsVectorAddTest {
                 v1.getPhysicsVector(),
                 "Adding vec to itself failed");
     }
+
+    @Test
+    public void subtract() {
+        double t = 2.0;
+        PhysicsVector v1 = new PhysicsVector(t, 2*t, 3*t);
+        v1.subtract(new PhysicsVector(1.0, 1.5, 2.0));
+        assertArrayEquals(new double[] {1.0, 2.5, 4.0},
+                v1.getPhysicsVector(),
+                "Subtracting failed");
+    }
+
+    @Test
+    public void unitVector() {
+        PhysicsVector v1 = new PhysicsVector(2, 0, 0);
+        PhysicsVector unitVector = v1.getUnitVector();
+        assertArrayEquals(new double[] {1.0, 0., 0.},
+                unitVector.getPhysicsVector(),
+                "Getting unit vector failed");
+    }
+
+    @Test
+    public void getMagnitude() {
+        PhysicsVector v1 = new PhysicsVector(2, 0, 0);
+        double mag = PhysicsVector.magnitude(v1);
+        assertEquals(2.0, mag);
+    }
+
 
 }
