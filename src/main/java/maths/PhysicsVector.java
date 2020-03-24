@@ -5,6 +5,10 @@ public class PhysicsVector {
     public static final int dimension = 3;
     private double[] physicsVector = new double[dimension];
 
+    public PhysicsVector(){
+        this.physicsVector = new double[] {0.0, 0.0, 0.0};
+    }
+
     public PhysicsVector(double... vec){
         System.arraycopy(vec, 0, this.physicsVector, 0, Math.min(dimension, vec.length));
     }
