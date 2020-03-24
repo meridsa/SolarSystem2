@@ -28,5 +28,8 @@ public class simpleCannon {
             }
             time += timestep;
         }
+        System.out.println("Cannonball travelled " + cannonBall.getPosition().getX() + " meters.");
+        System.out.println("in " + time + " seconds.");
+        System.out.println("Max height was " + maxY + " meters.");
     }
 }

@@ -39,8 +39,7 @@ public class Particle {
 
     public void updateVelocity(PhysicsVector force, double timestep){
         // a = F / m
-        force.scale(1.0 / this.mass);
-        PhysicsVector acceleration = force;
+        PhysicsVector acceleration = PhysicsVector.scale(force, 1.0 / this.mass);
         // dv = a * dt
         acceleration.scale(timestep);
         PhysicsVector changeInVelocity = acceleration;
